@@ -5,7 +5,8 @@ This is designed to support the labs for an internal Google training for Google 
 If you have any questions email jordanmhart@gmail.com.
 
 To run the app:
-0. Enable Firestore in native mode in your project if you haven't already
+
+0. Enable Firestore in native mode in your project if you haven't alread by visiting its page in the hamburger menu
 1. Run `npm install` inside the subdirectories of the app folder
 2. Create a .env file in each of the directories with the contents shown below
 3. Run npm start in each subdirectory of the app folder (run both services before running the web app)
