@@ -17,16 +17,25 @@ Important Notes:
 4. To make yourself an admin, first register for an account normally. Then go into the DB and add the property isAdmin=true to your record.
 
 Events Service .env file:
+
+```
 EVENTS_PORT=3001
 SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
+```
 
 Users Service .env file:
+
+```
 USERS_PORT=3002
 SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
+```
 
 Web App .env file:
+
+```
 WEB_PORT=3000
 EVENTS_SERVICE=http://localhost:3001
 USERS_SERVICE=http://localhost:3002
 SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
 SESSION_SECRET=putwhateveryouwanthere
+```
