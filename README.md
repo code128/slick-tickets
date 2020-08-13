@@ -34,7 +34,7 @@ ON_GOOGLE_CLOUD=true
 Web App .env file:
 
 ```
-WEB_PORT=3000
+WEB_PORT=8080
 EVENTS_SERVICE=http://localhost:3001
 USERS_SERVICE=http://localhost:3002
 ON_GOOGLE_CLOUD=true
