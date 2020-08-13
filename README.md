@@ -6,7 +6,7 @@ If you have any questions email jordanmhart@gmail.com.
 
 To run the app:
 0. Enable Firestore in native mode in your project if you haven't already
-1. Run npm install inside the subdirectories of the app folder
+1. Run `npm install` inside the subdirectories of the app folder
 2. Create a .env file in each of the directories with the contents shown below
 3. Run npm start in each subdirectory of the app folder (run both services before running the web app)
 
