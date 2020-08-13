@@ -21,14 +21,14 @@ Events Service .env file:
 
 ```
 EVENTS_PORT=3001
-SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
+ON_GOOGLE_CLOUD=true
 ```
 
 Users Service .env file:
 
 ```
 USERS_PORT=3002
-SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
+ON_GOOGLE_CLOUD=true
 ```
 
 Web App .env file:
@@ -37,6 +37,6 @@ Web App .env file:
 WEB_PORT=3000
 EVENTS_SERVICE=http://localhost:3001
 USERS_SERVICE=http://localhost:3002
-SERVICE_ACCOUNT_FILE=gcp-designers-development-SOME_HEX.json
+ON_GOOGLE_CLOUD=true
 SESSION_SECRET=putwhateveryouwanthere
 ```
