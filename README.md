@@ -12,31 +12,27 @@ To run the app in Cloud Shell:
 3. Run npm start in each subdirectory of the app folder (run both services before running the web app)
 
 Important Notes:
-1. If running locally, change the service account files below to match yours
-2. Or if you are running in Google Cloud (Cloud Shell?), instead of including that var just include an env var ON_GOOGLE_CLOUD=true
-3. For the session secret you can put whatever you want
-4. To make yourself an admin, first register for an account normally. Then go into the Firestore DB and add the property isAdmin=true to your record.
+1. If running locally, set a service account key in a SERVICE_ACCOUNT_FILE variable for each service. Also, add a NOT_ON_GOOGLE_CLOUD=true variable. 
+2. For the session secret you can put whatever you want
+3. To make yourself an admin, first register for an account normally. Then go into the Firestore DB and add the property isAdmin=true to your record.
 
 Events Service .env file:
 
 ```
-EVENTS_PORT=3001
-ON_GOOGLE_CLOUD=true
+PORT=3001
 ```
 
 Users Service .env file:
 
 ```
-USERS_PORT=3002
-ON_GOOGLE_CLOUD=true
+PORT=3002
 ```
 
 Web App .env file:
 
 ```
-WEB_PORT=8080
+PORT=8080
 EVENTS_SERVICE=http://localhost:3001
 USERS_SERVICE=http://localhost:3002
-ON_GOOGLE_CLOUD=true
 SESSION_SECRET=putwhateveryouwanthere
 ```

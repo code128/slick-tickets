@@ -2,7 +2,7 @@
 
 // Config Variables
 require('dotenv').config()
-const port = process.env.USERS_PORT
+const port = process.env.PORT
 
 // External Dependencies
 const express = require('express')

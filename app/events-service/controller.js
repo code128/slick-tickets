@@ -1,11 +1,11 @@
 // Config Variables
-const onGoogleCloud = process.env.ON_GOOGLE_CLOUD
+const notOnGoogleCloud = process.env.NOT_ON_GOOGLE_CLOUD
 
 // External Dependencies
 const admin = require('firebase-admin')
 
 // Firebase Config
-if (onGoogleCloud) {
+if (!notOnGoogleCloud) {
   admin.initializeApp({credential: admin.credential.applicationDefault()})
 } else {
   const serviceAccount = require(`../../credentials/${process.env.SERVICE_ACCOUNT_FILE}`)

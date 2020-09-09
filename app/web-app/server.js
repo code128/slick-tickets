@@ -2,9 +2,9 @@
 
 // Config Variables
 require('dotenv').config()
-const port = process.env.WEB_PORT
+const port = process.env.PORT
 const sessionSecret = process.env.SESSION_SECRET
-const onGoogleCloud = process.env.ON_GOOGLE_CLOUD
+const notOnGoogleCloud = process.env.NOT_ON_GOOGLE_CLOUD
 
 // External Dependencies
 const express = require('express')
@@ -17,7 +17,7 @@ const LocalStrategy = require('passport-local').Strategy
 const firestore = require('firebase-admin')
 
 // Config
-if (onGoogleCloud) {
+if (!notOnGoogleCloud) {
   firestore.initializeApp({credential: firestore.credential.applicationDefault()})
 } else {
   const serviceAccount = require(`../../credentials/${process.env.SERVICE_ACCOUNT_FILE}`)
