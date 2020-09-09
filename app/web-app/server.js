@@ -1,5 +1,8 @@
 'use strict'
 
+//Setup for GCP Debugging: 
+require('@google-cloud/debug-agent').start({serviceContext: {enableCanary: true}});
+
 // Config Variables
 require('dotenv').config()
 const port = process.env.PORT
