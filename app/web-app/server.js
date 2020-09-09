@@ -1,7 +1,7 @@
 'use strict'
 
 //Setup for GCP Debugging: 
-require('@google-cloud/debug-agent').start({serviceContext: {enableCanary: true}});
+require('@google-cloud/debug-agent').start({serviceContext: {enableCanary: false}});
 
 // Config Variables
 require('dotenv').config()
