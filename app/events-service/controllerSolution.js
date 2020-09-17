@@ -42,30 +42,6 @@ function getOneEvent (slug, callback) {
     })
 }
 
-//TODO: 1 Uncomment the following lines by removing the start comment (/*)
-//      and end comment (*/) tags. You'll find them on about line 50 and 65
-//      You'll notice that this is a very slightly modified version of the 
-//      code from our translate-text example. 
-
-//Here's the start comment:
-/*
-//Load the Google Translation API
-const {Translate} = require('@google-cloud/translate').v2;
-
-// Creates a translation client
-const translate = new Translate();
-
-async function translateText(text, target) {
-  // Translates the text into the target language. "text" can be a string for
-  // translating a single piece of text, or an array of strings for translating
-  // multiple texts.
-  const translation = await translate.translate(text, target);
-  return translation;
-}
-//And here's the end comment
-*/
-
-
 // Controller Methods
 exports.listEvents = function (req, res) {
   let allEventsExtracted = []
@@ -104,48 +80,18 @@ exports.listMyEvents = function (req, res) {
 
 exports.getEvent = function (req, res) {
   const slug = req.params.slug;
-  
-  //TODO: 2 Uncomment the below line using the same technique. Remove
-  //        both /* and */ from around it. Here, you see the line that
-  //        attempts to extract the query string "language"
-
-  /*
-  const language = req.query.language;
-  */
+  //pull the language query string, if it exists
+  //note, in Node.js, something that doesn't exist
+  //evaluates to false in a logical test
+  const lang = req.query.language;
   
   getOneEvent(slug, function (error, extractedEvent) {
     if (error) {
       res.json({ error: error });
-    }
-    //TODO: 3 Same approach, uncomment and then explore the below "else if" section. 
-    //      This is the final TODO, so after you understand what it does, return to
-    //      the standard exercise instruction steps. 
-    /*
-    else if(language){ //This block executed if "language" contains a value
-        //Extract the name and description from the fetched event object
-        var name = extractedEvent.name;
-        var description = extractedEvent.description;
+    } 
+    else if(language){
         
-        //Dump them into an array
-        var inputArray = [name, description];
-        
-        //Pass the array of two values to the translate function.
-        //The function returns a Promise, which is "then" evaluated
-        //once it has a value. 
-        translateText(inputArray, language).then(([translationArray])=>{
-          //Extract values from the returned translation array
-          var transName = translationArray[0].toString();
-          var transDescription = translationArray[1].toString();
-          console.log(`translated Name: ${transName}, translated Description: ${transDescription}`);
-          //Put the translated name and description back into the extractedEvent
-          //object and pass it back out through the response object
-          extractedEvent.name = transName;
-          extractedEvent.description = transDescription;
-          res.json(extractedEvent);
-      });
     }
-    */
-
     else {
       res.json(extractedEvent);
     }

@@ -7,8 +7,8 @@ const translate = new Translate();
 /**
  * TODO(developer): Uncomment the following lines before running the sample.
  */
-const text = 'I am eating an orange.';
-const target = 'fr';
+const text = 'Man I need a taco.';
+const target = 'es';
 
 async function translateText() {
   // Translates the text into the target language. "text" can be a string for
